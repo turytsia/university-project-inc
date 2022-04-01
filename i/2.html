@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!-- saved from url=(0162)https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&csid=779591&id=14668#Asynchronn%C3%AD_s%C3%A9riov%C3%A1_komunikace -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+<title>Wiki předmětu</title>
+<link rel="SHORTCUT ICON" href="https://wis.fit.vutbr.cz/images/favicon.ico" type="image/x-icon">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./2_files/style8.css" type="text/css">
+<link rel="stylesheet" href="./2_files/cwk-css.php" type="text/css">
+<script type="text/javascript">
+var ClockMonths = new Array("ledna", "února", "března", "dubna", "května", "června",
+"července", "srpna", "září", "října", "listopadu", "prosince");
+var ClockElm;
+var ClockDiff=0;
+document.cookie = "res=w:"+screen.width+",h:"+screen.height+",r:"+window.devicePixelRatio+",p:"+navigator.platform+",tp:"+navigator.maxTouchPoints+"; path=/";
+
+function ClockInit()
+{
+    if (!document.getElementById) return;
+    ClockElm = document.getElementById('clock');
+    if (!ClockElm || !ClockElm.innerHTML) return;
+    var ClockTm = new Date();
+    var datefmt = /^(\d\d?)[.]? ([^ ]+) (\d{4})\s(\d\d):(\d\d):(\d\d)$/;
+    var datep = datefmt.exec(ClockElm.innerHTML);
+    if (datep) {
+	var SrvClock = new Date();
+	SrvClock.setDate(datep[1]);
+	for (var i = 0; i<12; i++) {
+	    if (datep[2] == ClockMonths[i]) {
+		SrvClock.setMonth(i);
+	    }
+	}
+	SrvClock.setYear(datep[3]);
+	SrvClock.setHours(datep[4]);
+	SrvClock.setMinutes(datep[5]);
+	SrvClock.setSeconds(datep[6]);
+	ClockDiff = 500 + SrvClock.getTime()-ClockTm.getTime();
+    }
+    setInterval(UpdateClock, 1000);
+}
+
+function UpdateClock()
+{
+    var hr,min,sec,day,mon,year;
+
+    if (!ClockElm || !ClockElm.innerHTML) return;
+    var ClockTm = new Date();
+    ClockTm.setMilliseconds(ClockDiff+ClockTm.getMilliseconds());
+    if (ClockTm.getFullYear) year = ClockTm.getFullYear();
+    else year = ClockTm.getYear+1900;
+    mon = ClockTm.getMonth();
+    day = ClockTm.getDate();
+    hr = ClockTm.getHours();
+    min = ClockTm.getMinutes();
+    sec = ClockTm.getSeconds();
+    ClockElm.innerHTML = day+'. '+ClockMonths[mon]+' '+year+'\n '+(hr<=9?'0':'')+hr+':'+(min<=9?'0':'')+min+':'+(sec<=9?'0':'')+sec; 
+}
+
+function filter_empty(name)
+{
+    var i;
+    for (i = 0; i < document[name].elements.length; i++) {
+	var o = document.forms[name].elements[i];
+	if (o.type != 'text' && o.type != 'select-one') continue;
+	if (o.value == '') o.disabled = true;
+    }
+    return true;
+}
+</script>
+</head>
+<body onload="ClockInit()">
+<table class="noprint" role="navigation" width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #3498db">
+<tbody><tr><td><a href="https://www.fit.vut.cz/.cs"><img class="FITlogo" src="./2_files/fitnewz.png" alt="FIT"></a></td>
+<td class="mitembg" nowrap=""><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/index.php.cs"><span style="font-size:24px;line-height:14px">&nbsp;&#8962;&nbsp;</span></a></td>
+<th class="mitem hide-m"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/study.php.cs">studia</a></th>
+<th class="mitem"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/courses.php.cs">předměty</a></th>
+<th class="mitem"><a class="stabs" href="https://wis.fit.vutbr.cz/FIT/st/study-v.php.cs">termíny</a></th>
+<th class="mitem"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/reg.php.cs">registrace</a></th>
+<th class="mitem hide-m"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/admin.php.cs">hesla</a></th>
+<th class="mitem hide-m"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/other.php.cs">ostatní</a></th>
+<td class="mitembg hide-d hide-t"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/other.php.cs"><span style="font-size: 16px;line-height:16px">&nbsp;&gt;&nbsp;</span></a></td><td class="mitembg hide-m"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/logoff.php.cs?logoff=1"><span style="font-size:16px;line-height:16px">&nbsp;&#9032;&nbsp;</span></a></td><th class="mitem"><a class="stab" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.en?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;csid=779591&amp;id=14668">&nbsp;EN&nbsp;</a></th></tr>
+</tbody></table>
+<table cellpadding="4" width="100%" border="0">
+<tbody><tr valign="top"><td style="width: 90%"><h1>Wiki předmětu</h1></td>
+<td style="text-align: right; white-space: nowrap"><div id="clock">1. dubna 2022
+ 19:17:32</div></td></tr></tbody></table>
+<div role="main" class="content">
+<table cellpadding="4" width="100%" bgcolor="white"><tbody><tr><td>Login xturyt00, <b>Turytsia Oleksandr</b>, 1. ročník BITP, prezenční, FIT<br>
+Ak. rok 2021/2022 studium č.1: řádný zápis<p></p></td><td align="right"><a href="https://wis.fit.vutbr.cz/FIT/st/course-sl.php.cs?id=779591">Zpět na termíny</a>&nbsp;</td></tr></tbody></table>
+<table class="res" style="max-width: 100%" cellpadding="0"><tbody><tr valign="top"><td style="background-color: #f0f0f0">
+<div class="leftpane">
+    <div class="home">
+[[<a class="internal" href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Main_Page&amp;csid=779591&amp;id=14668" id="wiki__top" accesskey="h" title="[H]">INC Home</a>]]
+    </div>
+    <div id="toolbar" class="toolbar">
+   <div class="tb_main">
+
+<p>
+
+Navigace
+</p>
+
+<ul>
+<li class="level1"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Main_Page&amp;csid=779591&amp;id=14668" class="internal" title="Hlavní stránka">Hlavní stránka</a></li>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=recent&amp;csid=779591&amp;id=14668" class="internal" title="První část projektu (Návrh obvodu)">Poslední změny</a></span></li>
+<li class="level1"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Help:Main_Page&amp;csid=779591&amp;id=14668" class="internal" title="Help:Hlavní stránka">Nápověda</a></li>
+</ul>
+
+<p>Stránka</p><div class="tb_box"><form action="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;csid=779591&amp;id=14668" class="search" id="form_search" method="get"><div class="searchform">
+<input type="hidden" name="csid" value="779591">
+<input type="hidden" name="id" value="14668">
+<input type="text" autocomplete="off" id="qsearch" accesskey="f" name="search" class="forminput" title="Enter search text" value="">
+<input type="submit" name="dogo" value="Zobrazit" class="button" title="Zobrazit"> <input type="submit" name="dosearch" value="Hledat" class="button" title="Hledat">
+</div></form>
+</div>
+
+
+<p>
+
+Nástroje
+</p>
+
+<ul>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=backlink&amp;csid=779591&amp;id=14668" class="internal" title="První část projektu (Návrh obvodu)">Odkazuje sem</a></span></li>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=upload&amp;ns=INC&amp;csid=779591&amp;id=14668" class="internal" title="První část projektu (Návrh obvodu)">Nahrát soubor</a></span></li>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=fileinfo&amp;ns=INC&amp;list=1&amp;csid=779591&amp;id=14668" class="internal" title="První část projektu (Návrh obvodu)">Seznam souborů</a></span></li>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=index&amp;csid=779591&amp;id=14668" class="internal" title="První část projektu (Návrh obvodu)">Seznam stránek</a></span></li>
+<li class="level1"><span class="curid"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=history&amp;csid=779591&amp;id=14668" class="internal" title="První část projektu (Návrh obvodu)">Historie stránky</a></span></li>
+</ul>
+</div>   </div>
+</div>
+</td><td width="100%">
+<div class="rightpane maxw8">
+    <div class="bar" id="bar_top">
+    <ul class="bar_menu">
+<li><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=show&amp;rev=0&amp;csid=779591&amp;id=14668" class="selected" title="Stránka" rel="nofollow">Stránka</a></li><li><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=source&amp;rev=0&amp;csid=779591&amp;id=14668" title="Zdroj" rel="nofollow">Zdroj</a></li><li><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=history&amp;csid=779591&amp;id=14668" title="Historie" rel="nofollow">Historie</a></li><li><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=recent&amp;csid=779591&amp;id=14668" title="Změny" rel="nofollow">Změny</a></li><li><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;action=subscribe&amp;csid=779591&amp;id=14668" title="Sledovat" rel="nofollow">Sledovat</a></li>  </ul>
+    </div>
+    <div class="page">
+<!-- wikipage start -->
+<h1>První část projektu (Návrh obvodu)</h1>
+
+
+<p>
+
+Navrhněte obvod pro příjem datových slov po asynchronní sériové lince (UART_RX). 
+</p>
+
+<ul>
+<li class="level1">Vycházejte ze základních informací o fungování a zpracování asynchronní sériové komunikace uvedených v <a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;csid=779591&amp;id=14668#Asynchronn%C3%AD_s%C3%A9riov%C3%A1_komunikace" title="První část projektu (Návrh obvodu) &#8629;" class="internal">následující kapitole</a>.</li>
+<li class="level1">Uvažujte vstupní tok dat v pevném formátu: jeden START bit, 8 bitů dat, jeden STOP bit, zasílaných rychlostí 9600 baudů za sekundu. Přijímací obvod bude pracovat na 16x vyšší frekvenci (signál CLK) ve srovnání s přenosovou rychlostí jednotlivých datových bitů. Vašim úkolem bude snímat datové bity uprostřed přenášeného intervalu (viz. obrázek 3).</li>
+<li class="level1">Obvod UART_RX bude přijímat jednotlivé bity na vstupním datovém portu DIN, provede jejich de-serializaci a výsledné 8-bitové slovo zapíše na datový port DOUT. Platnost datového slova na portu DOUT potvrďte nastavením příznaku DOUT_VLD na úroveň logické 1 po dobu jednoho taktu hodinového signálu CLK. Příklad časového diagramu ukazujícího očekávaný průběh signálů na vstupně/výstupních portech komponenty UART_RX je znázorněn na obrázku 3.</li>
+</ul>
+
+<p>
+
+</p><div class="thumbright"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;src=Uart_diagram.png&amp;ns=INC&amp;action=fileinfo&amp;csid=779591&amp;id=14668" class="media image" title="Uart diagram.png"><img src="./2_files/Uart_diagram.png" class="media " alt=""></a><div class="thumbcaption"><b>Obrázek 1. Příklad časového průběhu na vstupech a výstupech obvodu UART_RX</b> </div>
+</div>
+ 
+<p></p>
+
+<ul>
+<li class="level1">Jednotlivé části datové cesty obvodu bude potřeba ovládat skrze konečný automat (Finite State Machine). Sestavte si nejprve graf přechodů tohoto automatu.</li>
+<li class="level1">Při návrhu nezapomeňte ošetřit asynchronní vstup do synchronní sítě obvodu UART_RX pro redukci možných metastabilních stavů.</li>
+</ul>
+
+<p>
+
+Vytvořte technickou zprávu, která bude obsahovat:
+</p>
+
+<ul>
+<li class="level1">Jméno, příjmení a login.</li>
+<li class="level1">Schéma architektury navrženého obvodu UART_RX na úrovni RTL a její stručný popis.</li>
+<li class="level1">Nákres grafu přechodů konečného automatu a jeho stručný popis.</li>
+</ul>
+
+<p>
+
+Ukázku formátu a obsahu výstupní zprávy naleznete v <a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;src=Priloha1.pdf&amp;ns=INC&amp;action=download&amp;csid=779591&amp;id=14668" class="media mediafile mf_pdf" title="priloha1.pdf">příloze</a>. Rozsah vaší zprávy z první části projektu by neměl překročit dvě strany formátu A4. Zprávu odevzdejte ve formátu PDF jako soubor s názvem zprava.pdf skrze informační systém, termín pro první část projektu.
+</p>
+
+<p>
+
+<b>Před odevzdáním do informačního systému se prosím ujistěte, že finální podoba zprávy obsahuje všechny potřebné náležitosti. Zkontrolovanou verzi zprávy odevzdejte prostřednictvím informačního systému nejpozději do data uvedeného v informačním systému u termínu pro první část projektu. Pozdější odevzdání nebude bráno v úvahu.</b>
+</p>
+
+<p>
+
+<b>Příloha:</b> <a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;src=Priloha1.pdf&amp;ns=INC&amp;action=download&amp;csid=779591&amp;id=14668" class="media mediafile mf_pdf" title="priloha1.pdf">Výstupní zpráva (Ukázka)</a>
+</p>
+
+<h1><span><a class="anchor" name="Asynchronní_sériová_komunikace">Asynchronní sériová komunikace</a></span></h1>
+
+<p>
+
+Asynchronní sériová komunikace se stala základním způsobem přenosu dat mezi počítači a periferními zařízeními. V současné době se používá zejména v oblasti vestavěných systémů. Pro přenos dat mezi dvěma uzly stačí při sériové komunikaci jeden datový vodič, po kterém jsou postupně zasílány jednotlivé datové bity. Asynchronnost komunikace pak znamená, že přenášené bity nejsou synchronizovány žádným dodatečným signálem jako je např. hodinový signál CLK. Přijímač je schopen rozpoznat příchozí bity a jejich synchronizaci na základě použitého zakódování na datovém vodiči.
+</p>
+
+<p>
+
+Komunikační linka (vodič) je vždy před začátkem přenosu libovolného vícebitového slova (obvykle bajtu) nastavena na úroveň logické 1. Přenos vícebitového slova pak začíná tzv. START bitem s hodnotou logické 0. Odvysílání START bitu, tedy přechod datové linky z hodnoty logické 1 do 0, umožní přijímači spolehlivě identifikovat okamžik začátku přenosu.
+</p>
+
+<p>
+
+Za START bitem jsou následně odvysílány jednotlivé bity datového slova od významově nejnižšího bitu (LSB) po významově nejvyšší bit (MSB). Za posledním bitem datového slova následuje jeden nebo více tzv. STOP bitů, které jsou vždy nastaveny na úroveň logické 1.
+</p>
+
+<p>
+
+Za STOP bitem může začít přenos dalšího datového slova, začíná se opět START bitem. Všimněte si, že STOP bit předchozího datového slova v kombinaci se START bitem dalšího slova umožňují spolehlivou detekci začátku nového přenosu (přechod z log. 1 do 0).
+</p>
+
+<p>
+
+Příklad přenosu 8-bitového datového slova s jedním STOP bitem je znázorněn na obrázku 2.
+</p>
+
+<p>
+
+</p><div class="thumbright"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;src=Word.png&amp;ns=INC&amp;action=fileinfo&amp;csid=779591&amp;id=14668" class="media image" title="word.png"><img src="./2_files/Word.png" class="media " alt=""></a><div class="thumbcaption"><b>Obrázek 2. Příklad sériového přenosu 8-bitového datového slova s jedním STOP bitem</b> </div>
+</div>
+  
+<p></p>
+
+<p>
+
+Pro spolehlivé rozpoznání jednotlivých bitů přenášeného datového slova na straně přijímače je potřeba nejen identifikovat začátek přenosu (přechod z logické 1 do 0), ale také vědět na jaké rychlosti komunikace probíhá. Vysílač i přijímač se proto musí nejprve nastavit na stejnou přenosovou rychlost. 
+</p>
+
+<p>
+
+Přenosová rychlost se udává v počtu přenesených baudů za sekundu, přičemž jeden baud odpovídá v tomto případě jednomu bitu. Základní a také nejčastěji používanou přenosovou rychlostí je rychlost 9600 baudů za sekundu. Pokud uvažujeme přenos 8-bitových datových slov ohraničených jedním START bitem a alespoň jedním STOP bitem (celkem 10 bitů), potom jsme schopni na rychlosti 9600 baudů přenášet až 960 bajtů za sekundu (9600/10).
+</p>
+
+<p>
+
+Aby přijímač spolehlivě identifikoval hodnoty (logické úrovně) přenášených datových bitů je navíc doporučeno, aby tento obvod pracoval na 16x větší frekvenci, než je vybraná přenosová rychlost. Každý datový bit by následně měl být snímán uprostřed časového intervalu pro přenos bitů, jak je naznačeno na obrázku 3. Specifikace doporučuje při 16x větší vzorkovací frekvenci snímat logickou úroveň vstupních dat v 7., 8. a 9. hodinovém cyklu a jako výsledný bit použít majoritu z těchto tří hodnot. Pro jednoduchost se však zde spokojme s hodnotou nasnímanou na konci 8. hodinového cyklu označenou jako MIDBIT.
+</p>
+
+<p>
+
+</p><div class="thumbcenter"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;src=Mid.gif&amp;ns=INC&amp;action=fileinfo&amp;csid=779591&amp;id=14668" class="media image" title="mid.gif"><img src="./2_files/Mid.gif" class="media " alt=""></a><div class="thumbcaption"><b>Obrázek 3. Příklad vzorkování datového bitu uprostřed</b> <a href="https://electronics.stackexchange.com/questions/207870/uart-receiver-sampling-rate" class="external" title="https://electronics.stackexchange.com/questions/207870/uart-receiver-sampling-rate" rel="nofollow">(převzato)</a> </div>
+</div>
+  
+<p></p>
+
+<p>
+
+<a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Projekt&amp;csid=779591&amp;id=14668" class="internal" title="Projekt">Zpět na projekt</a> | <a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;csid=779591&amp;id=14668#top" title="První část projektu (Návrh obvodu) &#8629;" class="internal">Zpět na první část</a>
+</p>
+<div class="clearer"></div>   <!-- wikipage end -->
+    </div>
+
+    <div class="footer">
+      <div class="wiki_top"><a href="https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&amp;csid=779591&amp;id=14668#top" onclick="window.scrollTo(0, 0)" title="Nahoru">Nahoru</a>
+      </div>
+      <div class="meta">
+        <div class="user">
+    </div>
+      <div class="doc">Id stránky: 728, zobrazena: 2248, verze: 18462, dne: 2022-02-18 12:50:50 uložil: ikekely</div>
+      </div>
+    </div>
+</div>
+</td></tr>
+</tbody></table>
+</div>
+<div class="noprint">
+<address>&#169;Fakulta informačních technologií VUT, Božetěchova 2, 612 00 Brno<br>Připomínky zasílejte na adresu <a href="mailto:lampa@fit.vut.cz">lampa@fit.vut.cz</a></address></div>
+
+
+</body></html>
