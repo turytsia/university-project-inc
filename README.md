@@ -1,4 +1,4 @@
-# PART 1 [Zadaní]
+# PART 1 [ Zadaní | CZ ]
 ## Vytvořte technickou zprávu, která bude obsahovat:
 
  - Jméno, příjmení a login.
