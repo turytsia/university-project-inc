@@ -28,7 +28,7 @@
 
 - Za `STOP` bitem může začít přenos dalšího datového slova, začíná se opět `START` bitem. Všimněte si, že `STOP` bit předchozího datového slova v kombinaci se `START` bitem dalšího slova umožňují spolehlivou detekci začátku nového přenosu (přechod z log. 1 do 0).
 
-![image](./i/2.PNG)
+![image](./i/t.PNG)
 - Pro spolehlivé rozpoznání jednotlivých bitů přenášeného datového slova na straně přijímače je potřeba nejen identifikovat začátek přenosu (přechod z logické 1 do 0), ale také vědět na jaké rychlosti komunikace probíhá. Vysílač i přijímač se proto musí nejprve nastavit na stejnou přenosovou rychlost.
 
 - Přenosová rychlost se udává v počtu přenesených baudů za sekundu, **přičemž jeden baud odpovídá v tomto případě jednomu bitu**. Základní a také nejčastěji používanou přenosovou rychlostí je rychlost 9600 baudů za sekundu. Pokud uvažujeme přenos 8-bitových datových slov ohraničených jedním `START` bitem a alespoň jedním `STOP` bitem (celkem 10 bitů), potom jsme schopni na rychlosti 9600 baudů přenášet až 960 bajtů za sekundu (9600/10).
