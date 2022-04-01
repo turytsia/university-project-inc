@@ -1,4 +1,4 @@
-# PART 1
+# PART 1 [Zadaní]
 ## Vytvořte technickou zprávu, která bude obsahovat:
 
  - Jméno, příjmení a login.
@@ -6,10 +6,10 @@
  - Nákres grafu přechodů konečného automatu a jeho stručný popis.
  **[Technicka zpráva, příklad](https://wis.fit.vutbr.cz/FIT/st/cwk.php.cs?title=Prvn%ED_%E8%E1st_projektu_%28N%E1vrh_obvodu%29&src=Priloha1.pdf&ns=INC&action=download&csid=779591&id=14668)**
 ## Vstupní tok dat
-- Start bit
-- 8 bitů dat
-- End bit
-- CLK bude pracovat 16x vyšší ve srovnaní přenosovou rychlosti
+- Start bit </br>
+- 8 bitů dat </br>
+- End bit </br>
+- CLK bude pracovat 16x vyšší ve srovnaní přenosovou rychlosti </br>
 ## Porty
 **DIN** - přijímá jednotlivé bity, provede jejich de-serializaci
 **DOUT** - výsledné 8-bitové slovo zapíše na datový port DOUT
