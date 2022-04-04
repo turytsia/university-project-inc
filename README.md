@@ -11,9 +11,9 @@
 - End bit </br>
 - CLK bude pracovat 16x vyšší ve srovnaní přenosovou rychlosti </br>
 ## Porty
-**DIN** - přijímá jednotlivé bity, provede jejich de-serializaci
-**DOUT** - výsledné 8-bitové slovo zapíše na datový port DOUT
-**DOUT_VLD** - Platnost datového slova na portu DOUT potvrďte nastavením příznaku na úroveň logické 1 po dobu jednoho taktu hodinového signálu CLK
+**DIN** - přijímá jednotlivé bity, provede jejich de-serializaci </br>
+**DOUT** - výsledné 8-bitové slovo zapíše na datový port DOUT </br>
+**DOUT_VLD** - Platnost datového slova na portu DOUT potvrďte nastavením příznaku na úroveň logické 1 po dobu jednoho taktu hodinového signálu CLK </br>
 ![](./i/1.PNG)
 
 >Jednotlivé části datové cesty obvodu bude potřeba ovládat skrze konečný automat (Finite State Machine). Sestavte si nejprve graf přechodů tohoto automatu.
